@@ -1,0 +1,106 @@
+/* Css Reset */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Navbar Area */
+
+#wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(32, 32, 32);
+}
+
+#nav-container{
+    display: flex;
+}
+
+.fa{
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    font-size: 55px;
+    color: rgb(237, 183, 8);
+}
+
+.current-user{
+    position: relative;
+    color: rgb(237, 183, 8);
+    top: 25px;
+    left: 30px;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.logout{
+    position: relative;
+    left: 94%;
+    top: -30px;
+    background-color: rgb(4, 157, 109);
+    color: rgb(225, 225, 225);
+    font-weight: bold;
+    border: none;
+}
+
+.logout:hover{
+    position: relative;
+    left: 94%;
+    top: -30px;
+    background-color: rgb(237, 183, 8);
+    color: rgb(225, 225, 225);
+    font-weight: bold;
+    border: none;
+}
+
+
+
+/* Main Body Section */
+
+#container{
+    padding: 4% 0 0 22%;
+    color: seashell;
+}
+
+#container h1{
+    margin-bottom: 5%;
+}
+
+#container th, td{
+    padding: 15px 120px 15px 0;
+}
+
+th{
+    font-size: 25px;
+}
+
+td a{
+    color: rgb(4, 157, 109);
+    margin-right: 10px;
+}
+
+td a:hover{
+    color: rgb(237, 183, 8);
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+
+
+.create-trip{
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: rgb(4, 157, 109);
+}
+
+.create-trip:hover{
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: rgb(237, 183, 8);
+}
+
+

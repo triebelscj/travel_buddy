@@ -1,0 +1,112 @@
+
+/* Css reset */
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(32, 32, 32);
+}
+
+
+
+/* Main page content */
+.fa{
+    display: inline-block;
+    position: relative;
+    top: 30px;
+    font-size: 55px;
+    color: rgb(237, 183, 8);
+}
+
+
+#title{
+    text-align: center;
+    color: rgb(4, 157, 109);
+    background-color: rgb(32, 32, 32);
+    padding: 10px 0 10px 0;
+}
+
+#title h1{
+    letter-spacing: 1px;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-top: 50px;
+    font-weight: 500;
+}
+
+#title h5{
+    height: 30px;
+    letter-spacing: 1px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 200;
+}
+
+#wrapper{
+    height: 70vh;
+    background-color: rgb(32, 32, 32);
+    display: flex;
+    justify-content: space-around;
+    color: aliceblue;
+}
+
+#area-left, #area-right{
+    width: 25%;
+    margin-top: 1%;
+}
+
+.messages{
+    width: 25%;
+    margin: 0 auto;
+    list-style: disc;
+    color: brown;
+    text-align: center;
+    font-size: 16px;
+}
+
+.messages a{
+    text-decoration: none;
+    color: rgb(237, 0, 0);
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+li{
+    list-style: none;
+}
+
+#separator{
+    width: 1px;
+    height: 360px;
+    background-color: rgb(96, 95, 95);
+    margin-top: 4%;
+}
+
+.form-group label{
+    margin: 3px 0 4px 0;
+}
+
+
+.btn{
+    margin: 10px 0 0 0;
+    background-color: rgb(4, 157, 109);
+    border: none;
+}
+
+
+h5{
+    color: rgb(132, 149, 165);
+    text-align: center;
+    background-color: rgb(32, 32, 32);
+    font-weight: 100;
+    font-size: 16px;
+
+}
+
+
+
+
+
+/* @media(max-width: 600px) {
+    #wrapper {
+      background-color: lightblue;
+      display: block;
+    }
+  } */

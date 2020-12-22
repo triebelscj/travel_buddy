@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Travel Buddy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css'%}">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- Logo & Log out -->
+        <div id="nav-container">
+            {% load static %}
+            <i class="fa fa-plane"></i>
+            <h1 class="current-user">Welcome {{user.first_name}}</h1>
+        </div>
+        <form action="/logout" method="post">
+            {% csrf_token %}
+            <input class="btn btn-primary btn-sm logout" type="submit" value="Log Out">
+        </form>
+        <!-- <a class="" href="/logout">Log Out</a> -->
+
+        <!-- Container -->
+        <div id="container">
+            <h1>Upcoming Trips</h1>
+            <a type="button" class="create-trip btn btn-primary" href="/shows/new">New Trip</a>
+            <table>
+                <tr>
+                    <th>Location</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Action</th>
+                </tr>
+                <!-- Looping through the context variable -->
+                {% for s in shows %}
+                <tr>
+                    <td>{{s.location}}</td>
+                    <td>{{s.start_date}}</td>
+                    <td>{{s.end_date}}</td>
+                    <td>
+                        <a href="/shows/{{s.id}}">Details</a>
+                        {% if request.session.user_id == s.created_by.id %}
+                        <a href="/shows/{{s.id}}/updatePage">Edit</a>
+                        <a href="/shows/{{s.id}}/delete">Remove</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

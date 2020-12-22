@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Travel Buddy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/newtrip.css'%}">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="nav-container">
+            {% load static %}
+            <i class="fa fa-plane"></i>
+            <h1 class="current-user">{{current_user.first_name}}</h1>
+        </div>
+        <form action="/dashboard" method="post">
+            {% csrf_token %}
+            <input class="btn btn-primary btn-sm go-home" type="submit" value="Dashboard">
+        </form>
+
+        <div id="body-container">
+            <h1>Plan your Trip!</h1>
+            <!-- ACTION = where its going // METHOD = POST  -->
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+
+            <form action="/shows/create" method="POST">
+                <!-- DONT FORGET TOKEN -->
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="network">Location</label>
+                    <input type="text" name="location" id="network">
+                </div>
+                <div class="form-group">
+                    <label for="release_date">Start Date</label>
+                    <input type="date" name="start_date" id="release_date">
+                </div>
+                <div class="form-group">
+                    <label for="title">End Date</label>
+                    <input type="date" name="end_date" id="title">
+                </div>
+                <div class="form-group">
+                    <label id="margin-up" for="description">Trip Plan</label>
+                    <textarea type="text" name="description" id="description"></textarea>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Let's Travel" name="" id="travel">
+            </form>
+            <form action="/dashboard" method="POST">
+                {% csrf_token %}
+                <input class="btn btn-primary" type="submit" value="Cancel" name="" id="cancel">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

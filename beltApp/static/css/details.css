@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(32, 32, 32);
+}
+
+#nav-container{
+    display: flex;
+}
+
+.fa{
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    font-size: 55px;
+    color: rgb(237, 183, 8);
+}
+
+.current-user{
+    position: relative;
+    color: rgb(237, 183, 8);
+    top: 25px;
+    left: 30px;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.go-home{
+    position: relative;
+    left: 93%;
+    top: -30px;
+    background-color: rgb(4, 157, 109);
+    color: rgb(225, 225, 225);
+    font-weight: bold;
+    border: none;
+}
+
+.go-home:hover{
+    position: relative;
+    left: 92%;
+    top: -30px;
+    background-color: rgb(237, 183, 8);
+    color: rgb(225, 225, 225);
+    font-weight: bold;
+    border: none;
+}
+
+#body-container{
+    position: relative;
+    width: 650px;
+    height: 550px;
+    left: 28%;
+    top: 30px;
+    padding: 40px;
+    text-align: left;
+    border-radius: 10px;
+    color: black;
+    background-color: rgba(255, 254, 254, 0.144);
+}
+
+#body-container h1{
+    margin-bottom: 30px;
+    color: rgb(4, 157, 109);
+    font-weight: 400;
+}
+
+
+
+h3{
+    position: relative;
+    bottom: 20px;
+    color: rgb(225, 225, 225);
+}
+
+#edit-btn{
+    position: relative;
+    left: 100px;
+    top: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(4, 157, 109);
+}
+#delete-btn{
+    position: relative;
+    left: 230px;
+    top: -11px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(4, 157, 109);
+}
+#dash-btn{
+    position: relative;
+    left: 350px;
+    top: -41px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(4, 157, 109);
+}
